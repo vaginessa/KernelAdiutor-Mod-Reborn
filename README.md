@@ -1,10 +1,10 @@
+This project is currently inactive.
+
 # KernelAdiutor
 
 [![Build Status](https://travis-ci.org/yoinx/kernel_adiutor.svg?branch=master)](https://travis-ci.org/yoinx/kernel_adiutor)
 
 ![Screenshot](https://raw.githubusercontent.com/Grarak/KernelAdiutor/master/screenshots/screenshot.png)
-
-* [Join Google+ Community](https://plus.google.com/communities/103764146519204710337)
 
 ## Kernel Downloader
 
