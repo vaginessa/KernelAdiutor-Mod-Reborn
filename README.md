@@ -1,4 +1,5 @@
-This project is currently inactive.
+This project Is Currently Under-Development
+I Have Taken Over This Project To Update It And Make It Work With Newer Kernels.
 
 # KernelAdiutor
 
