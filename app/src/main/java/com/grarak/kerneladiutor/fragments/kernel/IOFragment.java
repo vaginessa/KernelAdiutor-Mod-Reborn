@@ -253,7 +253,7 @@ public class IOFragment extends ViewPagerFragment implements Constants {
             List<String> list = new ArrayList<>();
             for (int i = 0; i < 3; i++) list.add(String.valueOf(i));
 
-            mIOAffinityCard = new PopupCardView.DPopupCard(list);
+			mIOAffinityCard = new PopupCardView.DPopupCard(list);
             mIOAffinityCard.setTitle(getString(R.string.ioaffitiny));
             mIOAffinityCard.setDescription(getString(R.string.ioraffinity_summary));
             mIOAffinityCard.setItem(IO.getIOAffinity());
