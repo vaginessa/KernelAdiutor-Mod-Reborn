@@ -22,7 +22,7 @@ android {
         applicationId 'com.kerneladiutor.mod'
         minSdkVersion 19
         targetSdkVersion 27
-        versionCode 16
+        versionCode 17
         versionName "1.0 build " + getDate()
 //        multiDexEnabled true
     }

@@ -827,7 +827,7 @@ public class CPU implements Constants {
     public static List<Integer> getLITTLECoreRange() {
         List<Integer> list = new ArrayList<>();
         if (!isBigLITTLE()) for (int i = 0; i < getCoreCount(); i++) list.add(i);
-        else if (getLITTLEcore() == 0) for (int i = 0; i < bigcore; i++) list.add(i);
+        else if (getLITTLEcore() == 0) for (int i = 0; i < bigCore; i++) list.add(i);
         else for (int i = getLITTLEcore(); i < getCoreCount(); i++) list.add(i);
         return list;
     }
