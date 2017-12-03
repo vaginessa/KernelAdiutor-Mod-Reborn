@@ -23,7 +23,7 @@ android {
         minSdkVersion 19
         targetSdkVersion 27
         versionCode 17
-        versionName "1.0 build " + getDate()
+        versionName "9.0 build " + getDate()
 //        multiDexEnabled true
     }
 
@@ -40,13 +40,13 @@ android {
         debug {
             minifyEnabled false
             signingConfig signingConfigs.debug
-            resValue "string", "APP_UPDATE_URL", "https://raw.githubusercontent.com/yoinx/kernel_adiutor/master/download/app/app-debug.json"
+            resValue "string", "APP_UPDATE_URL", "https://raw.githubusercontent.com/AliHaide001/kernel_adiutor/master/download/app/app-debug.json"
         }
 
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            resValue "string", "APP_UPDATE_URL", "https://raw.githubusercontent.com/yoinx/kernel_adiutor/master/download/app/app-release.json"
+            resValue "string", "APP_UPDATE_URL", "https://raw.githubusercontent.com/AliHaide001/kernel_adiutor/master/download/app/app-release.json"
         }
     }
     lintOptions {
