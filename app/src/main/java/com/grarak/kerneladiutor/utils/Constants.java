@@ -914,6 +914,7 @@ public interface Constants {
 
     // Vibration
     String[] VIBRATION_ARRAY = {
+			"/sys/devices/virtual/timed_output/vibrator/vib_strength",
             "/sys/module/qpnp_vibrator/parameters/vib_voltage",
             "/sys/vibrator/pwmvalue",
             "/sys/class/timed_output/vibrator/amp",
@@ -993,7 +994,7 @@ public interface Constants {
     String[][] MISC_ARRAY = {
             VIBRATION_ARRAY,
             {VIB_LIGHT, VIB_ENABLE, SENSOR_IND_WAKELOCK, LOGGER_ENABLED, DYNAMIC_FSYNC, GENTLE_FAIR_SLEEPERS, BCL_HOTPLUG,
-                    POWER_SUSPEND_STATE, TCP_AVAILABLE_CONGESTIONS, HOSTNAME_KEY, ADB_OVER_WIFI, GETENFORCE, SETENFORCE, LED_SPEED_GREEN, LED_ACTIVE, SWITCH_BUTTONS, 
+                    POWER_SUSPEND_STATE, TCP_AVAILABLE_CONGESTIONS, HOSTNAME_KEY, ADB_OVER_WIFI, GETENFORCE, SETENFORCE, LED_SPEED_GREEN, LED_ACTIVE, SWITCH_BUTTONS,
 					MSM_USB_OTG },
             LOGGER_ARRAY, CRC_ARRAY, FSYNC_ARRAY, BCL_ARRAY};
 
