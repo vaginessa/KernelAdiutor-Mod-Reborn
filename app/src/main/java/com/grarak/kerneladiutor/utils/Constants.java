@@ -75,7 +75,6 @@ public interface Constants {
     String CPU_BOOST = "/sys/module/cpu_boost/parameters";
     String CPU_BOOST_ENABLE = CPU_BOOST + "/cpu_boost";
     String CPU_BOOST_ENABLE_2 = CPU_BOOST + "/cpuboost_enable";
-	String CPU_BOOST_ENABLE_3 = CPU_BOOST + "/input_boost_enable";
     String CPU_BOOST_DEBUG_MASK = CPU_BOOST + "/debug_mask";
     String CPU_BOOST_MS = CPU_BOOST + "/boost_ms";
     String CPU_BOOST_SYNC_THRESHOLD = CPU_BOOST + "/sync_threshold";
@@ -286,8 +285,6 @@ public interface Constants {
     String HOTPLUG_AUTOSMP_PARAMETERS = "/sys/module/autosmp/parameters";
     String HOTPLUG_AUTOSMP_CONF = "/sys/kernel/autosmp/conf";
     String HOTPLUG_AUTOSMP_ENABLE = HOTPLUG_AUTOSMP_PARAMETERS + "/enabled";
-	String HOTPLUG_AUTOSMP_ENABLE_1 = HOTPLUG_AUTOSMP_PARAMETERS + "/autosmp_enabled";
-	String HOTPLUG_AUTOSMP_ENABLE_2 = HOTPLUG_AUTOSMP_PARAMETERS + "/hotplug_suspend";
     String HOTPLUG_AUTOSMP_CPUFREQ_DOWN = HOTPLUG_AUTOSMP_CONF + "/cpufreq_down";
     String HOTPLUG_AUTOSMP_CPUFREQ_UP = HOTPLUG_AUTOSMP_CONF + "/cpufreq_up";
     String HOTPLUG_AUTOSMP_CYCLE_DOWN = HOTPLUG_AUTOSMP_CONF + "/cycle_down";
@@ -480,6 +477,13 @@ public interface Constants {
     String GPU_MAX_TEGRA_FREQ = "/sys/kernel/tegra_gpu/gpu_cap_rate";
     String GPU_MIN_TEGRA_FREQ = "/sys/kernel/tegra_gpu/gpu_floor_rate";
     String GPU_AVAILABLE_TEGRA_FREQS = "/sys/kernel/tegra_gpu/gpu_available_rates";
+	
+	String GPU_CUR_POWERVR_FREQ = "/sys/devices/platform/dfrgx/devfreq/dfrgx/cur_freq";
+    String GPU_MAX_POWERVR_FREQ = "/sys/devices/platform/dfrgx/devfreq/dfrgx/max_freq";
+    String GPU_MIN_POWERVR_FREQ = "/sys/devices/platform/dfrgx/devfreq/dfrgx/min_freq";
+    String GPU_AVAILABLE_POWERVR_FREQS = "/sys/devices/platform/dfrgx/devfreq/dfrgx/available_frequencies";
+    String GPU_SCALING_POWERVR_GOVERNOR = "/sys/devices/platform/dfrgx/devfreq/dfrgx/governor";
+    String GPU_AVAILABLE_POWERVR_GOVERNORS = "/sys/devices/platform/dfrgx/devfreq/dfrgx/available_governors";
 
     String[] GPU_2D_CUR_FREQ_ARRAY = {GPU_CUR_KGSL2D0_QCOM_FREQ};
 
@@ -490,24 +494,24 @@ public interface Constants {
     String[] GPU_2D_SCALING_GOVERNOR_ARRAY = {GPU_SCALING_KGSL2D0_QCOM_GOVERNOR};
 
     String[] GPU_CUR_FREQ_ARRAY = {GPU_CUR_KGSL3D0_QCOM_FREQ, GPU_CUR_FDB00000_QCOM_FREQ, GPU_CUR_FDC00000_QCOM_FREQ,
-            GPU_CUR_SOC0_FDB00000_QCOM_FREQ, GPU_CUR_1C00000_QCOM_FREQ, GPU_CUR_B00000_QCOM_FREQ, GPU_CUR_OMAP_FREQ, GPU_POWERVR_CURRENT_FREQ, GPU_CUR_TEGRA_FREQ};
+            GPU_CUR_SOC0_FDB00000_QCOM_FREQ, GPU_CUR_1C00000_QCOM_FREQ, GPU_CUR_B00000_QCOM_FREQ, GPU_CUR_OMAP_FREQ, GPU_POWERVR_CURRENT_FREQ, GPU_CUR_TEGRA_FREQ, GPU_CUR_POWERVR_FREQ};
 
     String[] GPU_MAX_FREQ_ARRAY = {GPU_MAX_KGSL3D0_QCOM_FREQ, GPU_MAX_FDB00000_QCOM_FREQ, GPU_MAX_FDC00000_QCOM_FREQ,
-            GPU_MAX_SOC0_FDB00000_QCOM_FREQ, GPU_MAX_1C00000_QCOM_FREQ, GPU_MAX_B00000_QCOM_FREQ, GPU_MAX_OMAP_FREQ, GPU_POWERVR_MAX_FREQ, GPU_MAX_TEGRA_FREQ};
+            GPU_MAX_SOC0_FDB00000_QCOM_FREQ, GPU_MAX_1C00000_QCOM_FREQ, GPU_MAX_B00000_QCOM_FREQ, GPU_MAX_OMAP_FREQ, GPU_POWERVR_MAX_FREQ, GPU_MAX_TEGRA_FREQ, GPU_MAX_POWERVR_FREQ};
 
-    String[] GPU_MIN_FREQ_ARRAY = {GPU_MIN_FDB00000_QCOM_FREQ, GPU_POWERVR_MIN_FREQ, GPU_MIN_TEGRA_FREQ};
+    String[] GPU_MIN_FREQ_ARRAY = {GPU_MIN_FDB00000_QCOM_FREQ, GPU_POWERVR_MIN_FREQ, GPU_MIN_TEGRA_FREQ, GPU_MIN_POWERVR_FREQ};
 
     String[] GPU_AVAILABLE_FREQS_ARRAY = {GPU_AVAILABLE_KGSL3D0_QCOM_FREQS, GPU_AVAILABLE_FDB00000_QCOM_FREQS,
             GPU_AVAILABLE_SOC0_FDB00000_QCOM_FREQS, GPU_AVAILABLE_FDC00000_QCOM_FREQS, GPU_AVAILABLE_1C00000_QCOM_FREQ, 
-            GPU_AVAILABLE_B00000_QCOM_FREQ, GPU_AVAILABLE_OMAP_FREQS, GPU_POWERVR_AVAILABLE_FREQS, GPU_AVAILABLE_TEGRA_FREQS};
+            GPU_AVAILABLE_B00000_QCOM_FREQ, GPU_AVAILABLE_OMAP_FREQS, GPU_POWERVR_AVAILABLE_FREQS, GPU_AVAILABLE_TEGRA_FREQS, GPU_AVAILABLE_POWERVR_FREQS};
 
     String[] GPU_SCALING_GOVERNOR_ARRAY = {GPU_SCALING_KGSL3D0_QCOM_GOVERNOR, GPU_SCALING_FDB00000_QCOM_GOVERNOR,
             GPU_SCALING_PWRSCALE_GOVERNOR, GPU_SCALING_FDC00000_QCOM_GOVERNOR, GPU_SCALING_SOC0_FDB00000_QCOM_GOVERNOR,
-            GPU_SCALING_1C00000_QCOM_GOVERNOR, GPU_SCALING_B00000_QCOM_GOVERNOR, GPU_SCALING_OMAP_GOVERNOR, GPU_POWERVR_GOVERNOR};
+            GPU_SCALING_1C00000_QCOM_GOVERNOR, GPU_SCALING_B00000_QCOM_GOVERNOR, GPU_SCALING_OMAP_GOVERNOR, GPU_POWERVR_GOVERNOR, GPU_SCALING_POWERVR_GOVERNOR};
 
     String[] GPU_AVAILABLE_GOVERNORS_ARRAY = {GPU_AVAILABLE_FDB00000_QCOM_GOVERNORS, GPU_AVAILABLE_FDC00000_QCOM_GOVERNORS,
             GPU_AVAILABLE_SOC0_FDB00000_QCOM_GOVERNORS, GPU_AVAILABLE_1C00000_QCOM_GOVERNORS, 
-            GPU_AVAILABLE_B00000_QCOM_GOVERNORS, GPU_AVAILABLE_OMAP_GOVERNORS, GPU_POWERVR_AVAILABLE_GOVERNORS};
+            GPU_AVAILABLE_B00000_QCOM_GOVERNORS, GPU_AVAILABLE_OMAP_GOVERNORS, GPU_POWERVR_AVAILABLE_GOVERNORS, GPU_AVAILABLE_POWERVR_GOVERNORS};
 
     // Simple GPU
     String SIMPLE_GPU_PARAMETERS = "/sys/module/simple_gpu_algorithm/parameters";
@@ -791,12 +795,6 @@ public interface Constants {
 
     String[] BATTERY_ARRAY = {POWER_SUSPEND_MODE, POWER_SUSPEND_STATE, C0STATE, C1STATE, C2STATE, C3STATE, FORCE_FAST_CHARGE,
                                 CHARGE_RATE, BLX, CHARGE_RATE, ARCH_POWER, STATE_NOTIFIER, CHARGE_LEVEL, LOW_POWER_VALUE};
-	
-	// Battery charging current
-    String[] BATTERY_CHARGING_CURRENT = {
-            "/sys/devices/platform/battery/power_supply/battery/BatteryAverageCurrent",
-            "/sys/class/power_supply/battery/BatteryAverageCurrent"
-    };
 
     // I/O
     String IO_INTERNAL_SCHEDULER = "/sys/block/mmcblk0/queue/scheduler";
@@ -926,7 +924,6 @@ public interface Constants {
 			"/sys/devices/virtual/timed_output/vibrator/vib_strength",
             "/sys/module/qpnp_vibrator/parameters/vib_voltage",
             "/sys/vibrator/pwmvalue",
-			"/sys/kernel/thunderquake_engine/level",
             "/sys/class/timed_output/vibrator/amp",
             "/sys/class/timed_output/vibrator/level",
             "/sys/class/timed_output/vibrator/vtg_level",
@@ -942,7 +939,6 @@ public interface Constants {
     int[][] VIBRATION_MAX_MIN_ARRAY = {
             {31, 12},
             {127, 0},
-			{7, 0}
             {100, 0},
             {31, 12},
             {31, 12}, // Read MAX MIN from sys
