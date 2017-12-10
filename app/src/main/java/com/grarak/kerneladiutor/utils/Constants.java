@@ -791,6 +791,12 @@ public interface Constants {
 
     String[] BATTERY_ARRAY = {POWER_SUSPEND_MODE, POWER_SUSPEND_STATE, C0STATE, C1STATE, C2STATE, C3STATE, FORCE_FAST_CHARGE,
                                 CHARGE_RATE, BLX, CHARGE_RATE, ARCH_POWER, STATE_NOTIFIER, CHARGE_LEVEL, LOW_POWER_VALUE};
+	
+	// Battery charging current
+    String[] BATTERY_CHARGING_CURRENT = {
+            "/sys/devices/platform/battery/power_supply/battery/BatteryAverageCurrent",
+            "/sys/class/power_supply/battery/BatteryAverageCurrent"
+    };
 
     // I/O
     String IO_INTERNAL_SCHEDULER = "/sys/block/mmcblk0/queue/scheduler";

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
 
-    <string name="app_name">Kernel Adiutor-Mod</string>
+    <string name="app_name">KA-Mod Reborn</string>
     <string name="root_waiting">Waiting for root access</string>
     <string name="no_root">No root available</string>
     <string name="no_busybox">No busybox or toybox available</string>
@@ -20,7 +20,6 @@
     <string name="heavy_user_message">It seems like your are really enjoying this application! Thank you for using it!</string>
     <string name="rate_app">Rate the app</string>
     <string name="donate">Donate to me</string>
-	<string name="hbm_tile">HBM</string>
 
     <!-- FileBrowser -->
     <string name="no_permission">No permission</string>
@@ -996,8 +995,8 @@
     <string name="translation">Translation</string>
     <string name="translation_summary">Help me translate this app!</string>
 
-    <string name="modification">Modified build of Kernel Adiutor</string>
-    <string name="modification_summary">This application is being modified for various custom features that are not included in the original Kernel Adiutor.</string>
+    <string name="modification">Reborn Build Of Kernel Adiutor Mod</string>
+    <string name="modification_summary">This Application Is Being Modified/Updated For Various Custom Features/Fixes That Are Not Included In The Kernel Adiutor Mod.</string>
 
     <string name="accessibility_service_label">KA Per App Monitor</string>
     <string name="accessibility_service_desc">Service to monitor when foreground app changes for per-app profile loading</string>

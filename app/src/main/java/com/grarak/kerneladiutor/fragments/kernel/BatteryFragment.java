@@ -46,7 +46,7 @@ public class BatteryFragment extends RecyclerViewFragment implements SwitchCardV
         SeekBarCardView.DSeekBarCard.OnDSeekBarCardListener, PopupCardView.DPopupCard.OnDPopupCardListener {
 
     private UsageCardView.DUsageCard mBatteryLevelCard;
-    private CardViewItem.DCardView mBatteryVoltageCard, mBatteryTemperature;
+    private CardViewItem.DCardView mBatteryVoltageCard, mBatteryTemperature, mBatteryChargingCurrentCard;
 
     private SwitchCardView.DSwitchCard mForceFastChargeCard, mArchPowerCard;
 
@@ -73,6 +73,7 @@ public class BatteryFragment extends RecyclerViewFragment implements SwitchCardV
         lowpowervalueInit();
         batteryVoltageInit();
         batteryTemperatureInit();
+		batteryChargingCurrentInit();
         if (Battery.hasForceFastCharge()) forceFastChargeInit();
         if (Battery.hasChargeLevelControl()) chargeLevelControlInit();
         if (Battery.hasBlx()) blxInit();
@@ -127,6 +128,15 @@ public class BatteryFragment extends RecyclerViewFragment implements SwitchCardV
         mBatteryTemperature.setTitle(getString(R.string.battery_temperature));
 
         addView(mBatteryTemperature);
+    }
+
+    private void batteryChargingCurrentInit() {
+        if(Battery.hasChargingCurrent()) {
+            mBatteryChargingCurrentCard = new CardViewItem.DCardView();
+            mBatteryChargingCurrentCard.setTitle(getString(R.string.battery_charging_current));
+
+            addView(mBatteryChargingCurrentCard);
+        }
     }
 
     private void forceFastChargeInit() {
@@ -339,6 +349,7 @@ public class BatteryFragment extends RecyclerViewFragment implements SwitchCardV
             int level = intent.getIntExtra(BatteryManager.EXTRA_LEVEL, 0);
             int voltage = intent.getIntExtra(BatteryManager.EXTRA_VOLTAGE, 0);
             int temperature = intent.getIntExtra(BatteryManager.EXTRA_TEMPERATURE, 0);
+			int current = Battery.getChargingCurrent();
 
             if (mBatteryLevelCard != null) mBatteryLevelCard.setProgress(level);
             if (mBatteryVoltageCard != null)
@@ -347,6 +358,8 @@ public class BatteryFragment extends RecyclerViewFragment implements SwitchCardV
                 double celsius = (double) temperature / 10;
                 mBatteryTemperature.setDescription(Utils.formatCelsius(celsius) + " " + Utils.celsiusToFahrenheit(celsius));
             }
+			if(mBatteryChargingCurrentCard != null)
+                mBatteryChargingCurrentCard.setDescription(current + getString(R.string.ma));
         }
     };
 
