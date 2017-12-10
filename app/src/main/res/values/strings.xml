@@ -20,6 +20,7 @@
     <string name="heavy_user_message">It seems like your are really enjoying this application! Thank you for using it!</string>
     <string name="rate_app">Rate the app</string>
     <string name="donate">Donate to me</string>
+	<string name="hbm_tile">HBM</string>
 
     <!-- FileBrowser -->
     <string name="no_permission">No permission</string>
@@ -78,6 +79,7 @@
     <string name="wake_controls">Wake Controls</string>
     <string name="sound">Sound</string>
     <string name="battery">Power and Battery</string>
+    <string name="battery_charging_current">Battery Charging Current[unsure]</string>
     <string name="io_scheduler">I/O Scheduler</string>
     <string name="ksm">Kernel Samepage Merging</string>
     <string name="low_memory_killer">Low Memory Killer</string>
@@ -823,7 +825,7 @@
     <string name="no_plugins">No plugins found</string>
     <string name="installed">Installed</string>
     <string name="update_available">Update available</string>
-    <string name="update_available_open_app">Open Kernel Adiutor-Mod to download</string>
+    <string name="update_available_open_app">Open Kernel Adiutor-Mod Reborn to download</string>
     <string name="not_installed">Not installed</string>
 
     <!-- Downloads -->

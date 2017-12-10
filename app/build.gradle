@@ -19,7 +19,7 @@ android {
     compileSdkVersion 27
     buildToolsVersion '26.0.3'
     defaultConfig {
-        applicationId 'com.kerneladiutor.mod'
+        applicationId 'com.kerneladiutormod.reborn'
         minSdkVersion 19
         targetSdkVersion 27
         versionCode 18
@@ -58,7 +58,7 @@ android {
 
 def getDate() {
     def date = new Date()
-    def formattedDate = date.format('MM-dd-yyyy')
+    def formattedDate = date.format('dd-MM-yyyy')
     return formattedDate
 }
 
