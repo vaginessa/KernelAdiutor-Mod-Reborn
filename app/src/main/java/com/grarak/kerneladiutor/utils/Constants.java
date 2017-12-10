@@ -917,6 +917,7 @@ public interface Constants {
 			"/sys/devices/virtual/timed_output/vibrator/vib_strength",
             "/sys/module/qpnp_vibrator/parameters/vib_voltage",
             "/sys/vibrator/pwmvalue",
+			"/sys/kernel/thunderquake_engine/level",
             "/sys/class/timed_output/vibrator/amp",
             "/sys/class/timed_output/vibrator/level",
             "/sys/class/timed_output/vibrator/vtg_level",
@@ -932,6 +933,7 @@ public interface Constants {
     int[][] VIBRATION_MAX_MIN_ARRAY = {
             {31, 12},
             {127, 0},
+			{7, 0}
             {100, 0},
             {31, 12},
             {31, 12}, // Read MAX MIN from sys
