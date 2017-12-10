@@ -75,6 +75,7 @@ public interface Constants {
     String CPU_BOOST = "/sys/module/cpu_boost/parameters";
     String CPU_BOOST_ENABLE = CPU_BOOST + "/cpu_boost";
     String CPU_BOOST_ENABLE_2 = CPU_BOOST + "/cpuboost_enable";
+	String CPU_BOOST_ENABLE_3 = CPU_BOOST + "/input_boost_enable";
     String CPU_BOOST_DEBUG_MASK = CPU_BOOST + "/debug_mask";
     String CPU_BOOST_MS = CPU_BOOST + "/boost_ms";
     String CPU_BOOST_SYNC_THRESHOLD = CPU_BOOST + "/sync_threshold";

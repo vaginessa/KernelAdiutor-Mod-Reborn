@@ -261,6 +261,7 @@ public class CPU implements Constants {
     public static void activateCpuBoost(boolean active, Context context) {
         String command = active ? "1" : "0";
         if (CPU_BOOST_ENABLE_FILE.equals(CPU_BOOST_ENABLE_2)) command = active ? "Y" : "N";
+		else if (CPU_BOOST_ENABLE_FILE.equals(CPU_BOOST_ENABLE_3)) command = active ? "Y" : "N";
         Control.runCommand(command, CPU_BOOST_ENABLE_FILE, Control.CommandType.GENERIC, context);
     }
 
@@ -272,6 +273,7 @@ public class CPU implements Constants {
     public static boolean hasCpuBoostEnable() {
         if (Utils.existFile(CPU_BOOST_ENABLE)) CPU_BOOST_ENABLE_FILE = CPU_BOOST_ENABLE;
         else if (Utils.existFile(CPU_BOOST_ENABLE_2)) CPU_BOOST_ENABLE_FILE = CPU_BOOST_ENABLE_2;
+		else if (Utils.existFile(CPU_BOOST_ENABLE_3)) CPU_BOOST_ENABLE_FILE = CPU_BOOST_ENABLE_3;
         return CPU_BOOST_ENABLE_FILE != null;
     }
 
