@@ -19,6 +19,7 @@ package com.kerneladiutormod.reborn.fragments.other;
 import android.os.Bundle;
 import android.view.View;
 
+import com.kerneladiutormod.reborn.BuildConfig;
 import com.kerneladiutormod.reborn.R;
 import com.kerneladiutormod.reborn.elements.cards.CardViewItem;
 import com.kerneladiutormod.reborn.fragments.RecyclerViewFragment;
@@ -29,10 +30,10 @@ import com.kerneladiutormod.reborn.utils.Utils;
  */
 public class AboutusFragment extends RecyclerViewFragment {
 
-    private final String APP_SOURCE = "https://github.com/yoinx/kernel_adiutor/";
-    private final String ISSUE_LINK = "https://github.com/yoinx/kernel_adiutor/issues";
-    private final String DONATION_LINK = "https://www.paypal.com/paypalme/JosephSchubert";
-    private final String GOOGLE_PLUS_LINK = "https://plus.google.com/communities/103764146519204710337";
+    private final String APP_SOURCE = "https://github.com/AliHaide001/kernel_adiutor/";
+    private final String ISSUE_LINK = "https://github.com/AliHaide001/kernel_adiutor/issues";
+    private final String TELEGRAM_GROUP_LINK = "https://t.me/joinchat/F6q_fE3dluT94algpcDsTg";
+    private final String XDA_THREAD_LINK = "https://forum.xda-developers.com/android/apps-games/approot4-4-ka-mod-reborn-v18-t3714105";
 
     @Override
     public boolean showApplyOnBoot() {
@@ -44,11 +45,12 @@ public class AboutusFragment extends RecyclerViewFragment {
         super.init(savedInstanceState);
 
         ModificationInit();
-        googlePlusInit();
-        licenseInit();
+        ModificationVersionInit();
+        TelegramGroupInit();
+        ThreadInit();
         appSourceInit();
         featureRequestInit();
-        donateInit();
+        licenseInit();
     }
 
     private void ModificationInit() {
@@ -59,28 +61,40 @@ public class AboutusFragment extends RecyclerViewFragment {
         addView(mModificationCard);
     }
 
-    private void googlePlusInit() {
-        CardViewItem.DCardView mGooglePlusCard = new CardViewItem.DCardView();
-        mGooglePlusCard.setTitle(getString(R.string.google_plus_community));
-        mGooglePlusCard.setDescription(getString(R.string.google_plus_community_summary));
-        mGooglePlusCard.setOnDCardListener(new CardViewItem.DCardView.OnDCardListener() {
+    private void ModificationVersionInit() {
+        CardViewItem.DCardView mModificationVersionCard = new CardViewItem.DCardView();
+        mModificationVersionCard.setTitle(getString(R.string.modification_version));
+        mModificationVersionCard.setDescription(getString(R.string.modification_version_number, BuildConfig.VERSION_CODE));
+
+        addView(mModificationVersionCard);
+    }
+
+    private void TelegramGroupInit() {
+        CardViewItem.DCardView mTelegramGroupCard = new CardViewItem.DCardView();
+        mTelegramGroupCard.setTitle(getString(R.string.telegram_group));
+        mTelegramGroupCard.setDescription(getString(R.string.telegram_group_summary));
+        mTelegramGroupCard.setOnDCardListener(new CardViewItem.DCardView.OnDCardListener() {
             @Override
             public void onClick(CardViewItem.DCardView dCardView) {
-                Utils.launchUrl(getActivity(), GOOGLE_PLUS_LINK);
+                Utils.launchUrl(getActivity(), TELEGRAM_GROUP_LINK);
             }
         });
 
-        addView(mGooglePlusCard);
+        addView(mTelegramGroupCard);
     }
 
-    private void licenseInit() {
-        CardViewItem.DCardView mLicenseCard = new CardViewItem.DCardView();
-        mLicenseCard.setTitle(getString(R.string.license));
+    private void ThreadInit() {
+        CardViewItem.DCardView mThreadCard = new CardViewItem.DCardView();
+        mThreadCard.setTitle(getString(R.string.xda_thread));
+        mThreadCard.setDescription(getString(R.string.xda_thread_summary));
+        mThreadCard.setOnDCardListener(new CardViewItem.DCardView.OnDCardListener() {
+            @Override
+            public void onClick(CardViewItem.DCardView dCardView) {
+                Utils.launchUrl(getActivity(), XDA_THREAD_LINK);
+            }
+        });
 
-        View view = inflater.inflate(R.layout.app_license_view, container, false);
-
-        mLicenseCard.setView(view);
-        addView(mLicenseCard);
+        addView(mThreadCard);
     }
 
     private void appSourceInit() {
@@ -111,18 +125,15 @@ public class AboutusFragment extends RecyclerViewFragment {
         addView(mFeatureRequestCard);
     }
 
-    private void donateInit() {
-        CardViewItem.DCardView mDonationCard = new CardViewItem.DCardView();
-        mDonationCard.setTitle(getString(R.string.donate));
-        mDonationCard.setDescription(getString(R.string.donate_summary));
-        mDonationCard.setOnDCardListener(new CardViewItem.DCardView.OnDCardListener() {
-            @Override
-            public void onClick(CardViewItem.DCardView dCardView) {
-                Utils.launchUrl(getActivity(), DONATION_LINK);
-            }
-        });
+    private void licenseInit() {
+        CardViewItem.DCardView mLicenseCard = new CardViewItem.DCardView();
+        mLicenseCard.setTitle(getString(R.string.license));
 
-        addView(mDonationCard);
+        View view = inflater.inflate(R.layout.app_license_view, container, false);
+
+        mLicenseCard.setView(view);
+        addView(mLicenseCard);
     }
 
 }
+
