@@ -9,8 +9,5 @@ android:
     - build-tools-26.0.3
     - android-27
 
-jdk:
-    -oraclejdk8
-
 script:
   ./gradlew build
