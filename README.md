@@ -3,7 +3,7 @@ I Have Taken Over This Project To Update It And Make It Work With Newer Kernels.
 
 # KernelAdiutor
 
-[![Build Status](https://travis-ci.org/yoinx/kernel_adiutor.svg?branch=master)](https://travis-ci.org/yoinx/kernel_adiutor)
+[![Build Status](https://travis-ci.org/AliHaide001/kernel_adiutor.svg?branch=master)](https://travis-ci.org/AliHaide001/kernel_adiutor)
 
 ![Screenshot](https://raw.githubusercontent.com/Grarak/KernelAdiutor/master/screenshots/screenshot.png)
 
